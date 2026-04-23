@@ -23,10 +23,10 @@ The best-performing model (based on **Mean Absolute Error**) is used to make pre
 ```
 stress-predictor/
 │
-├── stress\\\_predictor.ipynb   # Main Jupyter Notebook (EDA + training + evaluation)
-├── stress\\\_predictor.py      # Python script version
-├── mental\\\_health.csv        # Training dataset
-├── unseen\\\_data.csv          # New data for prediction
+├── stress_predictor.ipynb   # Main Jupyter Notebook (EDA + training + evaluation)
+├── stress_predictor.py      # Python script version
+├── mental_health.csv        # Training dataset
+├── unseen_data.csv          # New data for prediction
 ├── requirements.txt         # Python dependencies
 └── README.md                # Project documentation
 ```
@@ -38,18 +38,18 @@ stress-predictor/
 After data cleaning, the following features were selected:
 
 * `Age`
-* `Sleep\\\_Hours`
-* `Work\\\_Study\\\_Hours`
-* `Physical\\\_Activity` *(encoded: Low / Medium / High)*
-* `Social\\\_Interaction\\\_Score`
+* `Sleep_Hours`
+* `Work_Study_Hours`
+* `Physical_Activity` *(encoded: Low / Medium / High)*
+* `Social_Interaction_Score`
 * `Burnout`
 * `Depression`
-* `Night\\\_Usage`
+* `Night_Usage`
 * `Occupation` *(one-hot encoded)*
 
-**Target variable:** `Stress\\\_Level`
+**Target variable:** `Stress_Level`
 
-**Dropped columns:** `Person\\\_ID`, `Gender`, `Anxiety`, `Alcohol`, `Smoking`, `Caffeine\\\_Intake`
+**Dropped columns:** `Person_ID`, `Gender`, `Anxiety`, `Alcohol`, `Smoking`, `Caffeine_Intake`
 
 \---
 
@@ -71,16 +71,16 @@ pip install -r requirements.txt
 ### 3\. Run the notebook
 
 ```bash
-jupyter notebook stress\\\_predictor.ipynb
+jupyter notebook stress_predictor.ipynb
 ```
 
 Or run the Python script directly:
 
 ```bash
-python stress\\\_predictor.py
+python stress_predictor.py
 ```
 
-> ⚠️ Make sure `mental\\\_health.csv` and `unseen\\\_data.csv` are in the same folder before running.
+> ⚠️ Make sure `mental_health.csv` and `unseen_data.csv` are in the same folder before running.
 
 \---
 
@@ -98,7 +98,7 @@ DecisionTreeRegressor  → lowest MAE (chosen for deployment)
 
 ## 🚀 Prediction on New Data
 
-The trained Random Forest model is applied to `unseen\\\_data.csv`. A new column `Predicted stress level` is added to the output showing the predicted stress scores.
+The trained Random Forest model is applied to `unseen_data.csv`. A new column `Predicted stress level` is added to the output showing the predicted stress scores.
 
 \---
 
